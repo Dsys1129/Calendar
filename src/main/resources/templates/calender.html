@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calendar</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .nav-btn {
+            margin: 0 5px;
+            padding: 5px 10px;
+        }
+
+        .todo-days, #todo {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            text-align: center;
+        }
+
+        .day, .date {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .date {
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+
+        .selected-date {
+            background-color: #87CEFA;
+        }
+
+        .todo-container {
+            flex: 1;
+            padding: 10px;
+            border-left: 1px solid #ddd;
+        }
+
+        .todo-container h2 {
+            margin-bottom: 10px;
+        }
+
+        .todo-container #todo-input {
+            width: calc(100% - 22px);
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .todo-container button {
+            padding: 5px 10px;
+            margin-bottom: 10px;
+        }
+
+        .todo-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .todo-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .todo-list li {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .todo-list li button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+<div class='header'>
+    <button id="go-prev" class="nav-btn">&lt;</button>
+    <div id="year-month"></div>
+    <button id="go-next" class="nav-btn">&gt;</button>
+    <button id="go-today" class="nav-btn">Today</button>
+</div>
+<div class="todo-days">
+    <div class="day">일</div>
+    <div class="day">월</div>
+    <div class="day">화</div>
+    <div class="day">수</div>
+    <div class="day">목</div>
+    <div class="day">금</div>
+    <div class="day">토</div>
+</div>
+<div id="todo"></div>
+
+<div class="todo-container">
+    <h2 id="selected-date"></h2>
+    <input type="text" id="todo-input" placeholder="일정을 입력하세요">
+    <button id="todo_button">일정 등록</button>
+    <ul id="todo-list"></ul>
+</div>
+<script src="/calendar.js"></script>
+</body>
+</html>
